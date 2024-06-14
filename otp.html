@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/loginStyle.css">
+    <title>Login Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="action/otpAuth.php" method="POST">
+            <h1>Verify Your Email</h1>
+            <h3>Enter OTP</h3>
+            <div class="code-container">
+                <input type="hidden" id="email" name="email" value="">
+                <input type="number" class="code" placeholder="0" min="0" max="9" name="otp1" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" name="otp2" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" name="otp3" required>
+                <input type="number" class="code" placeholder="0" min="0" max="9" name="otp4" required>
+            </div>
+            <button type="submit" name="verify">Verify</button>
+        </form>
+    </div>
+
+    <script>
+        // Get the email value from the query string
+        const urlParams = new URLSearchParams( window.location.search );
+        const email = urlParams.get( "email" );
+
+        // Set the email input field's value
+        document.getElementById( "email" ).value = email;
+    </script>
+
+</body>
+
+</html>
